@@ -1,7 +1,12 @@
 package com.kaucar.biggit.biggit.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class BitBucketRepository implements Repository {
+	
+	@SerializedName("full_name")
 	private String fullName;
+	
 	private String name;
 	private int id;
 
@@ -27,6 +32,11 @@ public class BitBucketRepository implements Repository {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	@Override
+	public String toString() {
+		return fullName;
 	}
 
 }
