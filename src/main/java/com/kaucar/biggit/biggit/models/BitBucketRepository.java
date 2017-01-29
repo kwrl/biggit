@@ -1,7 +1,10 @@
 package com.kaucar.biggit.biggit.models;
 
+import javax.persistence.Entity;
+
 import com.google.gson.annotations.SerializedName;
 
+@Entity
 public class BitBucketRepository implements Repository {
 	
 	@SerializedName("full_name")
@@ -9,6 +12,16 @@ public class BitBucketRepository implements Repository {
 	
 	private String name;
 	private int id;
+	
+	private int internalId;
+
+	public int getInternalId() {
+		return internalId;
+	}
+
+	public void setInternalId(int internalId) {
+		this.internalId = internalId;
+	}
 
 	public String getFullName() {
 		return fullName;
